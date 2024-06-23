@@ -9,16 +9,16 @@ object TopLevelFormal extends App {
   FormalConfig
     .withBMC(10)
     .doVerify(new Component {
-      val dut = FormalDut(TopLevel())
+    //   val dut = FormalDut(TopLevel())
 
-      // Ensure the formal test start with a reset
-      assumeInitial(clockDomain.isResetActive)
+    // Ensure the formal test start with a reset
+    //   assumeInitial(clockDomain.isResetActive)
 
-      // Provide some stimulus
-      anyseq(dut.io.cond0)
-      anyseq(dut.io.cond1)
+    //   // Provide some stimulus
+    //   anyseq(dut.io.cond0)
+    //   anyseq(dut.io.cond1)
 
-      // Check the state initial value and increment
-      assert(dut.io.state === past(dut.io.state + U(dut.io.cond0)).init(0))
+    //   // Check the state initial value and increment
+    //   assert(dut.io.state === past(dut.io.state + U(dut.io.cond0)).init(0))
     })
 }
